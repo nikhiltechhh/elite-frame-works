@@ -19,7 +19,7 @@ const Header = () => {
     { name: "HOME", href: "/" },
     { name: "ABOUT US", href: "#about" },
     { name: "TOURNAMENT", href: "#tournament" },
-    { name: "PAGES", href: "#pages" },
+    { name: "PAGES", href: "Course" },
     { name: "NEWS", href: "#news" },
     { name: "CONTACT", href: "#contact" },
   ];
@@ -41,7 +41,7 @@ const Header = () => {
                 </div>
               </div>
               <span className="text-2xl font-bold tracking-wider">
-                MY<span className="text-primary text-glow">KD</span>
+                Skill<span className="text-primary text-glow">Coders</span>
               </span>
             </Link>
 
