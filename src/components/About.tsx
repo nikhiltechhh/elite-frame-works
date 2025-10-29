@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Play } from "lucide-react";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,24 +101,23 @@ const About = () => {
                 : "opacity-0 translate-x-20"
             }`}
           >
-            <div className="relative aspect-video rounded-2xl overflow-hidden neon-border group cursor-pointer">
-              {/* Video Thumbnail Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
-              
-              {/* Animated Grid Pattern */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
-              </div>
+            <div className="relative aspect-video rounded-2xl overflow-hidden neon-border group">
+              {/* Video Element - Replace src with your video URL */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                poster="/placeholder.svg"
+              >
+                <source src="/your-video.mp4" type="video/mp4" />
+                <source src="/your-video.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
 
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl animate-glow-pulse" />
-                  <div className="relative bg-primary/90 backdrop-blur-sm rounded-full p-6 md:p-8 border border-primary-glow group-hover:scale-110 group-hover:bg-primary transition-all duration-300">
-                    <Play className="w-8 h-8 md:w-12 md:h-12 text-primary-foreground fill-primary-foreground" />
-                  </div>
-                </div>
-              </div>
+              {/* Video Overlay with gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
 
               {/* Overlay Text */}
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
@@ -132,8 +130,8 @@ const About = () => {
               </div>
 
               {/* Corner Accents */}
-              <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-primary/50" />
-              <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-primary/50" />
+              <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-primary/50 pointer-events-none" />
+              <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-primary/50 pointer-events-none" />
             </div>
 
             {/* Floating Elements */}
