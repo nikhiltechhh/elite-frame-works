@@ -24,7 +24,7 @@ const Header = () => {
     { name: "TOURNAMENT", href: "#tournament" },
     { name: "COURSES", href: "/course" },
     { name: "GADGETS", href: "/gadgets" },
-    { name: "CONTACT", href: "#contact" },
+    { name: "CONTACT US", href: "#contact" },
   ];
 
   return (
