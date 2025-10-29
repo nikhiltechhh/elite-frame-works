@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { Menu, X, Search, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import AuthDialog from "./AuthDialog";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [authDialogOpen, setAuthDialogOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<"login" | "signup">("signup");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,9 +71,17 @@ const Header = () => {
               </button>
 
               {/* Sign In Button */}
-              <Button variant="gaming" size="lg" className="hidden md:flex gap-2">
+              <Button 
+                variant="gaming" 
+                size="lg" 
+                className="hidden md:flex gap-2"
+                onClick={() => {
+                  setAuthMode("signup");
+                  setAuthDialogOpen(true);
+                }}
+              >
                 <LogIn className="w-4 h-4" />
-                SIGN IN
+                SIGN UP
               </Button>
 
               {/* Mobile Menu Toggle */}
@@ -126,13 +137,29 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="gaming" size="lg" className="w-full mt-4 gap-2">
+            <Button 
+              variant="gaming" 
+              size="lg" 
+              className="w-full mt-4 gap-2"
+              onClick={() => {
+                setAuthMode("signup");
+                setAuthDialogOpen(true);
+                setIsMobileMenuOpen(false);
+              }}
+            >
               <LogIn className="w-4 h-4" />
-              SIGN IN
+              SIGN UP
             </Button>
           </nav>
         </div>
       </div>
+
+      {/* Auth Dialog */}
+      <AuthDialog 
+        open={authDialogOpen} 
+        onOpenChange={setAuthDialogOpen}
+        defaultMode={authMode}
+      />
     </>
   );
 };
