@@ -46,7 +46,7 @@ const Hero = () => {
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-none">
                 <span className="block text-glow">STREAMING</span>
                 <span className="block text-foreground/90 text-4xl md:text-5xl lg:text-6xl mt-2">
-                  VIDEO GAMES ONLINE
+                  LIVE ATTACKS
                 </span>
               </h1>
             </div>

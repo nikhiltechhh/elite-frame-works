@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Search, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import AuthDialog from "./AuthDialog";
+import Authdialog from "./Authdialog";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,8 +22,8 @@ const Header = () => {
     { name: "HOME", href: "/" },
     { name: "ABOUT US", href: "#about" },
     { name: "TOURNAMENT", href: "#tournament" },
-    { name: "PAGES", href: "Course" },
-    { name: "NEWS", href: "#news" },
+    { name: "COURSES", href: "/course" },
+    { name: "GADGETS", href: "/gadgets" },
     { name: "CONTACT", href: "#contact" },
   ];
 
@@ -50,17 +50,29 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              {navItems.map((item, index) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 relative group cursor-pointer"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
-                </a>
-              ))}
+                {navItems.map((item, index) => (
+                  item.href.startsWith("/") ? (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 relative group cursor-pointer"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      {item.name}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 relative group cursor-pointer"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      {item.name}
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                    </a>
+                  )
+                ))}
             </nav>
 
             {/* Right Section */}
@@ -127,15 +139,27 @@ const Header = () => {
         >
           <nav className="container mx-auto px-4 py-8 flex flex-col gap-6">
             {navItems.map((item, index) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-bold text-foreground hover:text-primary transition-all duration-300 animate-slide-in cursor-pointer"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {item.name}
-              </a>
+              item.href.startsWith("/") ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-bold text-foreground hover:text-primary transition-all duration-300 animate-slide-in cursor-pointer"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-bold text-foreground hover:text-primary transition-all duration-300 animate-slide-in cursor-pointer"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
             <Button 
               variant="gaming" 
@@ -155,7 +179,7 @@ const Header = () => {
       </div>
 
       {/* Auth Dialog */}
-      <AuthDialog 
+      <Authdialog 
         open={authDialogOpen} 
         onOpenChange={setAuthDialogOpen}
         defaultMode={authMode}

@@ -137,7 +137,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+  <div className="min-h-screen bg-background font-gaming text-foreground overflow-x-hidden relative mt-20">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] animate-glow-pulse"></div>
@@ -157,19 +157,23 @@ const Index = () => {
       )}
 
       {/* Hero Banner */}
-      <div className="relative z-10 py-12 md:py-20 px-4">
-  <div className="container mx-auto text-center -mt-12">
+      <div className="relative z-10 py-12 md:py-20 px-4 ">
+        <div className="container mx-auto text-center -mt-12">
+          {/* Optional badge (kept commented out) */}
           {/* <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 px-6 py-2 rounded-full mb-6 backdrop-blur-sm animate-slide-in-up">
             <Sparkles size={20} className="text-yellow-400 animate-glow-pulse" />
             <span className="text-yellow-300 font-semibold">Limited Time Offer</span>
           </div> */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-primary to-accent bg-clip-text text-transparent leading-tight animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
             Transform Your Career
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
+
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4 animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
             Master in-demand skills with our premium courses at 50% OFF
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm md:text-base animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 text-sm md:text-base animate-slide-in-up mt-6" style={{ animationDelay: '0.3s' }}>
             <div className="bg-card/50 backdrop-blur-md px-6 py-3 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:scale-105">
               <span className="text-muted-foreground">🎓 </span>
               <span className="font-semibold">100K+ Students</span>
@@ -349,14 +353,14 @@ const Index = () => {
                           <div className="flex items-center gap-2 bg-secondary/50 rounded-lg p-1">
                             <button
                               onClick={() => updateQuantity(item.id, -1)}
-                              className="bg-primary hover:bg-primary/90 p-1.5 rounded-lg transition-colors"
+                              className="bg-transparent hover:bg-transparent p-1.5 rounded-lg transition-colors"
                             >
                               <Minus size={14} />
                             </button>
                             <span className="px-3 py-1 font-bold text-sm">{item.quantity}</span>
                             <button
                               onClick={() => updateQuantity(item.id, 1)}
-                              className="bg-primary hover:bg-primary/90 p-1.5 rounded-lg transition-colors"
+                              className="bg-transparent hover:bg-transparent p-1.5 rounded-lg transition-colors"
                             >
                               <Plus size={14} />
                             </button>
