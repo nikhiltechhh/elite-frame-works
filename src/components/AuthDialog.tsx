@@ -83,18 +83,15 @@ const AuthDialog = ({ open, onOpenChange, defaultMode = "signup" }: AuthDialogPr
 
         <form onSubmit={handleSubmit} className="space-y-6 mt-4">
           {/* OAuth Buttons */}
-          <div className="space-y-3 animate-fade-in-up">
+          <div className="flex gap-4 justify-center animate-fade-in-up">
             <Button
               type="button"
               onClick={() => handleOAuthSignIn('google')}
               variant="outline"
               size="lg"
-              className="w-full h-12 bg-background/50 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
+              className="w-16 h-16 bg-background/50 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group p-0"
             >
               <GoogleIcon />
-              <span className="ml-3 font-semibold">
-                {mode === "signup" ? "SIGN UP WITH GOOGLE" : "LOGIN WITH GOOGLE"}
-              </span>
             </Button>
 
             <Button
@@ -102,12 +99,9 @@ const AuthDialog = ({ open, onOpenChange, defaultMode = "signup" }: AuthDialogPr
               onClick={() => handleOAuthSignIn('github')}
               variant="outline"
               size="lg"
-              className="w-full h-12 bg-background/50 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group"
+              className="w-16 h-16 bg-background/50 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 group p-0"
             >
               <GitHubIcon />
-              <span className="ml-3 font-semibold">
-                {mode === "signup" ? "SIGN UP WITH GITHUB" : "LOGIN WITH GITHUB"}
-              </span>
             </Button>
           </div>
 
