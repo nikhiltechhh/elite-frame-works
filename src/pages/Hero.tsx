@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-// import heroImage from "@/assets/hero-gaming.jpg";
+import hero from "@/assets/hero.mp4";
 
 const Hero = () => {
   return (
@@ -58,14 +58,17 @@ Start your journey towards success today! </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button variant="gaming" size="lg" className="gap-2 text-base">
-                CONTACT US
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-              <Button variant="gaming-outline" size="lg" className="gap-2 text-base">
+              <a href="tel:+919177331409">
+                <Button variant="gaming" size="lg" className="gap-2 text-base">
+                  CONTACT US
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </a>
+
+              {/* <Button variant="gaming-outline" size="lg" className="gap-2 text-base">
                 <Play className="w-5 h-5" />
                 WATCH LIVE
-              </Button>
+              </Button> */}
             </div>
 
             {/* Stats */}
@@ -93,11 +96,15 @@ Start your journey towards success today! </p>
               
               {/* Main Image */}
               <div className="relative">
-                <img
-                  src="https://skillcoders.com/wp-content/uploads/2025/03/a-scaled.jpg.webp"
-                  alt="Gaming Hero"
-                  className="w-full h-auto object-contain drop-shadow-2xl animate-float"
-                />
+                <video
+  src= {hero}
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-full h-auto object-contain drop-shadow-2xl animate-float"
+></video>
+
                 
                 {/* Decorative Elements */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-primary clip-angle opacity-50" />
@@ -107,12 +114,12 @@ Start your journey towards success today! </p>
 
             {/* Floating Badge */}
             <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 animate-float" style={{ animationDelay: "1s" }}>
-              <div className="clip-angle bg-card border-2 border-primary p-4 backdrop-blur-sm neon-border">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary text-glow">LIVE</div>
-                  <div className="text-xs text-muted-foreground uppercase">Now Streaming</div>
-                </div>
-              </div>
+              {/* <div className="clip-angle bg-card border-2 border-primary p-4 backdrop-blur-sm neon-border">
+                <div className="text-center"> */}
+                  {/* <div className="text-2xl font-bold text-primary text-glow">LIVE</div> */}
+                  {/* <div className="text-xs text-muted-foreground uppercase">Now Streaming</div> */}
+                {/* </div>
+              </div> */}
             </div>
           </div>
         </div>

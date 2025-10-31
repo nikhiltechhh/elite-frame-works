@@ -26,9 +26,8 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "https://in.linkedin.com/in/skill-coders-0815b8358", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/skill_coders_?igsh=MXVmcnNsYXVocjYydA==", label: "Instagram" },
   ];
 
   return (
@@ -59,8 +58,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-400 text-sm">
                 <Phone className="w-4 h-4 mr-3 text-[#00ffa1]" />
-                <a href="tel:+1234567890" className="hover:text-[#00ffa1] transition-colors">
-                  +91 9999**9999
+                <a href="tel:+919177331409" className="hover:text-[#00ffa1] transition-colors">
+                  +91 9177331409
                 </a>
               </div>
               <div className="flex items-start text-gray-400 text-sm">
@@ -127,7 +126,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <p className="text-gray-500 text-sm">
-              © {currentYear} SkillCoders. All rights reserved.
+              © {currentYear} SkillCoders. All rights reserved. Designed by © Buildursite.ui
             </p>
 
             {/* Social Links */}

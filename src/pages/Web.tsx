@@ -281,12 +281,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-[hsl(240,4%,16%)] mt-20 py-8">
-        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>© 2025 Premium Templates. All rights reserved.</p>
-        </div>
-      </footer>
+     
     </div>
   );
 };

@@ -63,8 +63,8 @@ const AuthDialog = ({ open, onOpenChange, defaultMode = "signup" }: AuthDialogPr
           <DialogTitle className="text-3xl font-bold text-center">
             {mode === "signup" ? (
               <>
-                <span className="text-foreground">JOIN THE</span>{" "}
-                <span className="text-primary text-glow">GAME</span>
+                <span className="text-foreground">JOIN AS</span>{" "}
+                <span className="text-primary text-glow">SKILLCODER</span>
               </>
             ) : (
               <>
@@ -75,8 +75,8 @@ const AuthDialog = ({ open, onOpenChange, defaultMode = "signup" }: AuthDialogPr
           </DialogTitle>
           <DialogDescription className="text-center text-muted-foreground">
             {mode === "signup" 
-              ? "Create your account and start your gaming journey" 
-              : "Login to continue your gaming adventure"
+              ? "Create your account and start your journey" 
+              : "Login to continue your Coding adventure"
             }
           </DialogDescription>
         </DialogHeader>
