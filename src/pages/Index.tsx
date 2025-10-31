@@ -1,7 +1,8 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Header from "@/pages/Header";
+import Hero from "@/pages/Hero";
 import GameM from "./GameM";
 import About from "@/pages/About";
+import Footer from "./Footer";
 
 const Index = () => {
   return (
@@ -10,6 +11,8 @@ const Index = () => {
       <Hero />
       <About />
       <GameM />
+      <Footer />
+
     </div>
   );
 };

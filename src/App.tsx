@@ -9,28 +9,39 @@ import Course from "./pages/Course";
 import Gadgets from "./pages/Gadget";
 import Game from "./pages/Game";
 import War from "./pages/War";
-import Header from "@/components/Header"; // 👈 Common header
+import Web from "./pages/Web";
+import Career from "./pages/Career";
+import Header from "@/pages/Header";   // 👈 Common header
+import Footer from "@/pages/Footer";   // 👈 Common footer (import this)
 
+// Create query client instance
 const queryClient = new QueryClient();
 
-// 👇 Wrapper to handle conditional header rendering
+// 👇 Wrapper to handle conditional header/footer rendering
 const AppContent = () => {
   const location = useLocation();
 
-  // Hide Header on the index page
-  const hideHeader = location.pathname === "/";
+  // Hide Header and Footer on index page
+  const hideLayout = location.pathname === "/";
 
   return (
     <>
-      {!hideHeader && <Header />}
+      {/* Show Header on all pages except index */}
+      {!hideLayout && <Header />}
+
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/course" element={<Course />} />
         <Route path="/gadgets" element={<Gadgets />} />
         <Route path="/game" element={<Game />} />
         <Route path="/war" element={<War />} />
+        <Route path="/web" element={<Web />} />
+        <Route path="/career" element={<Career />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      {/* Show Footer on all pages except index */}
+      {!hideLayout && <Footer />}
     </>
   );
 };

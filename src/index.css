@@ -6,6 +6,7 @@
 All colors MUST be HSL.
 */
 
+
 @layer base {
   :root {
     --background: 220 25% 8%;
@@ -132,4 +133,18 @@ All colors MUST be HSL.
 
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out;
+}
+
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
 }

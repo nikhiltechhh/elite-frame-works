@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import SCLOGO from "@/assets/SCLOGO.mp4";
+import LOGO from "@/assets/about.mp4";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -112,7 +112,7 @@ const About = () => {
   className="w-full h-full object-cover"
   poster="/placeholder.svg"
 >
-  <source src={SCLOGO} type="video/mp4" />
+  <source src={LOGO} type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
